@@ -1,0 +1,33 @@
+package com.prog.main;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.prog.util.HibernateUtil;
+
+public class App1 {
+
+	public static void main(String[] args) {
+		Session session = null;
+		Transaction transaction =null;
+
+		try {
+			session = HibernateUtil.getSession();
+			if(session!=null) {
+				 transaction = session.beginTransaction();
+			}
+		} catch (HibernateException e) {
+			e.printStackTrace();
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+		
+		finally {
+			
+			
+		}
+	}
+}

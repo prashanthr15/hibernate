@@ -1,0 +1,11 @@
+package com.prog.main;
+
+import org.hibernate.cfg.Configuration;
+
+public class AppEager {
+
+	public static void main(String[] args) {
+		
+		Configuration config = new Configuration();
+	}
+}

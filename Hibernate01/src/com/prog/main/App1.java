@@ -1,0 +1,52 @@
+package com.prog.main;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.prog.entity.Student;
+
+public class App1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		//inform jvm to activate hibernate
+		Configuration config = new Configuration();
+		config.configure();
+		
+		//creating sessionfactory to hold all other required objects for hibernate
+		SessionFactory sessionFactory = config.buildSessionFactory();
+		
+		//persistence opration
+		Session session = sessionFactory.openSession();
+		
+		//only for non select operation transaction must be there
+		Transaction transaction = session.beginTransaction();
+		
+		//create persistence object
+		Student st= new Student();
+		st.setId(1);
+		st.setName("second");
+		st.setAge(22);
+		st.setCity("pune");
+		
+		//perform persistence operation
+		//to create a table
+		//session.save(st);
+		session.saveOrUpdate(st);
+		//saveOrUpdate(); to save the data if not present or uodate the data if present
+		
+		
+		//this is final no rollback
+		//commit the operation
+		transaction.commit();
+		
+		session.close();
+		sessionFactory.close();
+		
+	}
+
+}

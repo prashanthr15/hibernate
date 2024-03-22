@@ -1,0 +1,14 @@
+package com.prog.util;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+//in general util means suoport to main class 
+public class HibernateUtil {
+
+	private static SessionFactory ss;
+
+	static {
+		sessionFactory=new Configuration().configure().buildSessionFactory();
+	}
+}

@@ -1,0 +1,15 @@
+package com.prog.main;
+
+import org.hibernate.cfg.Configuration;
+
+public class App1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		//inform jvm to activate hibernate
+		Configuration config = new Configuration();
+	}
+
+}

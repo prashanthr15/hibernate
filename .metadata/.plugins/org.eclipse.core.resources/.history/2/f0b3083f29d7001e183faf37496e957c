@@ -1,0 +1,7 @@
+package com.prog.util;
+
+
+//in general util means suoport to main class 
+public class HibernateUtil {
+
+}

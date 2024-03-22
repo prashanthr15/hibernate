@@ -1,0 +1,40 @@
+package com.prog.util;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+//in general util means suoport to main class 
+public class HibernateUtil {
+
+	private static SessionFactory sessionFactory = null;
+	private static Session session = null;
+
+	static {
+		sessionFactory=new Configuration().configure().buildSessionFactory();
+	}
+	
+	public static Session getSession() {
+		// i want session object when there is no object
+		if(session == null) {
+		session =sessionFactory.openSession();
+		}
+		return session;
+	}
+	
+	//which ever user is using that session i want accept here
+	public static void closeSession(Session session) {
+		if(session!=null) {
+			session.close();
+		}
+	}
+	
+	
+	public static void closeFactorySession(SessionFactory sessionFactory) {
+		if(sessionFactory!=null) {
+			sessionFactory.close();
+		}
+	}
+	
+	
+}

@@ -1,0 +1,10 @@
+package com.prog.entity;
+
+public class Student {
+//we can also use int but as a developer we have wrok with objects instead of primitives
+	private Integer id;
+	private String name;
+	private Integer age;
+	private String city;
+	
+}

@@ -1,0 +1,5 @@
+package com.prog.util;
+
+public class HibernateUtil {
+
+}

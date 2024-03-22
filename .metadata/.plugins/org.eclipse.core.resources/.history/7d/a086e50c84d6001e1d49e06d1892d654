@@ -1,0 +1,84 @@
+package com.prog.entity;
+
+
+import javax.persistence.Column;
+//javax means javaextension
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+//@Entity this will map with the table
+@Entity
+@Table(name="students")
+//mysql tble name
+public class Student {
+//we can also use int but as a developer we have wrok with objects instead of primitives
+	
+	//@Id for primary key
+	//@Column(name="sid") names given in table in db
+	//all this annotations coming from which api from JPA java persistence API
+	@Id
+	@Column(name="sid")
+	private Integer id;
+	
+	@Column(name="sname")
+	private String name;
+	
+	@Column(name="sage")
+	private Integer age;
+	
+	@Column(name="scity")
+	private String city;
+	
+	
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", age=" + age + ", city=" + city + "]";
+	}
+
+
+	public Integer getId() {
+		return id;
+	}
+
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public Integer getAge() {
+		return age;
+	}
+
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
+
+	public String getCity() {
+		return city;
+	}
+
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+	
+	
+	public Student() {
+		System.out.println("no args constructer requuired for internal use of hibernate");
+		
+	}
+}

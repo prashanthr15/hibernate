@@ -1,0 +1,24 @@
+package com.prog.main;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class App1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		//inform jvm to activate hibernate
+		Configuration config = new Configuration();
+		config.configure();
+		
+		//creating sessionfactory to hold all other required objects for hibernate
+		SessionFactory sessionFactory = config.buildSessionFactory();
+		
+		Session session = sessionFactory.openSession();
+		
+	}
+
+}
